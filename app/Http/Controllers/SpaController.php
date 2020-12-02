@@ -8,6 +8,7 @@ class SpaController extends Controller
 {
     public function app()
     {
+        ///aaaaa
         return view('spa/app');
     }
 }
