@@ -13,15 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+Route::get('/test', function () {
+   dd(\Carbon\Carbon::now()->format('Ymd'));
+});
 
-//Route::get('/', function () {
-//    return view('spa/app');
-//});
+
 
 Route::get('/{any?}', fn() => view('spa/app'))->where('any', '.+');
 
-//Route::get('/test', 'SpaController@app');
-//Route::get("/app{any}", "SpaController@app")->where("any", "(/?$|/.*)");
+
