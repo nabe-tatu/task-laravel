@@ -14,6 +14,19 @@ class FolderUserResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'attributes' => [
+                'folder_id' => $this->folder_id,
+                'user_id' => $this->user_id,
+                'task_name' => $this->task_name,
+                'created_at' => $this->created_at,
+                'updated_at' => $this->updated_at,
+            ],
+            'relationships' => [],
+            'links' => [
+                'self' => ''
+            ]
+        ];
     }
 }

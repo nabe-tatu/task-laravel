@@ -22,3 +22,7 @@ Route::get('/test', function () {
 Route::get('/{any?}', fn() => view('spa/app'))->where('any', '.+');
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
