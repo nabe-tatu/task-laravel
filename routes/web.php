@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/test', function () {
-   dd(\Carbon\Carbon::now()->format('Ymd'));
+    dd(\App\Models\Folder::class);
 });
 
 

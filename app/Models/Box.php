@@ -5,7 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FolderModel extends Model
+class Box extends Model
 {
     use HasFactory;
+
+    public function tasks()
+    {
+        return $this->hasMany(FolderUser::class);
+    }
 }
