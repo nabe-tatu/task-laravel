@@ -14,8 +14,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/test', function () {
-    dd(\App\Models\Folder::class);
+
 });
+
+
+
+
+
+Route::prefix('/v1')->namespace('Api\v1')->group(function () {
+    Route::get('/userIndex',[\App\Http\Controllers\Api\v1\UserController::class,'index'])->name('user.index');
+    Route::get('/folderUserIndex',[\App\Http\Controllers\Api\v1\FolderUserController::class,'index'])->name('user.index');;
+
+});
+
+
+
+
+
+
+
+
 
 
 
@@ -23,6 +41,13 @@ Route::get('/{any?}', fn() => view('spa/app'))->where('any', '.+');
 
 
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+
+
+
+
+//Auth::routes();
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
